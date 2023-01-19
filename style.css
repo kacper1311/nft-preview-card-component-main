@@ -1,0 +1,334 @@
+/* --------------------------------------------------Colors-------------------------------------------------- */
+:root {
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --Very-dark-blue-main: hsl(217, 54%, 11%);/*(main BG)*/
+    --Very-dark-blue-card: hsl(216, 50%, 16%);/*(card BG)*/
+    --Very-dark-blue-line: hsl(215, 32%, 27%);/*(line)*/
+    --White: hsl(0, 0%, 100%);
+}
+
+/* --------------------------------------------------Styling-------------------------------------------------- */
+body {
+    background-color: var(--Very-dark-blue-main);
+}
+
+main {
+    font-size: 18px;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* -------------------------------Card------------------------------- */
+article {
+    background-color: var(--Very-dark-blue-card);
+    padding: 1.5rem;
+    max-width: 400px;
+    border-radius: 1rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+/* ---------------------Picture--------------------- */
+#picture {
+    position: relative;
+    overflow: hidden;
+}
+
+#picture img{
+    border-radius: .5em;
+    width: 100%;
+    display: block;
+}
+
+#picture #view {
+    border-radius: .5rem;
+    position: absolute;
+    background-color: var(--Cyan);
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 50%;
+    display: none;
+}
+
+#picture:hover #view{
+    display: block;
+}
+
+#picture #view img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5rem;
+    height: 5rem;
+}
+
+/* ---------------------main-text--------------------- */
+#main-text h1{
+    color: var(--White);
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+}
+
+#main-text h1:hover {
+    color: var(--Cyan);
+    cursor: pointer;
+}
+
+#main-text p{
+    color: var(--Soft-blue);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+#price-time {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+#price-time #price {
+    color: var(--Cyan);
+    font-size: 1rem;
+    font-weight: 400;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 1fr;
+    grid-column-gap: .1rem;
+    align-items: center;
+}
+
+#price-time #time-left {
+    color: var(--Soft-blue);
+    font-size: 1rem;
+    font-weight: 400;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 1fr;
+    grid-column-gap: .8rem;
+    grid-column-end: end;
+    align-items: center;
+}
+
+/* ---------------------creation--------------------- */
+#creation {
+    padding-top: 1rem;
+    border-top: 1px solid var(--Very-dark-blue-line);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-columns: 13% 87%;
+    align-items: center;
+}
+
+#creation img{
+    height: 2rem;
+    border: 1px solid var(--White);
+    border-radius: 50%;
+    margin-right: .3rem;
+}
+
+#creation p {
+    color: var(--Soft-blue);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+#creation a {
+    color: var(--White);
+}
+
+#creation a:hover {
+    color: var(--Cyan);
+    cursor: pointer;
+}
+
+/* --------------------------------------------------footer-------------------------------------------------- */
+footer { 
+    font-size: 14px; 
+    letter-spacing: .5px;
+    text-align: center; 
+    padding: 2rem;
+    font-family: 'Outfit', sans-serif;
+    color: var(--Soft-blue);
+}
+
+footer a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* --------------------------------------------------Responsive design-------------------------------------------------- */
+@media only screen and (max-width: 520px) {
+    body {
+        padding: 2rem;
+    }
+
+    #main-text h1{
+        font-size: 1.7rem;
+    }
+
+    #main-text p{
+        font-size: 1.4rem;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    #main-text h1{
+        font-size: 1.6rem;
+    }
+
+    #main-text p{
+        font-size: 1.3rem;
+    }
+
+    #creation p {
+        font-size: 1.1rem;
+    }
+
+    #price-time #price {
+        font-size: .9rem;
+    }
+    
+    #price-time #time-left {
+        font-size: .9rem;
+    }
+
+    #price-time #price {
+        display: grid;
+        grid-template-columns: 15% 85%;
+        grid-template-rows: 1fr;
+        grid-column-gap: .1rem;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    #main-text h1{
+        font-size: 1.4rem;
+    }
+
+    #main-text p{
+        font-size: 1.1rem;
+    }
+
+    #creation p {
+        font-size: 1rem;
+    }
+
+    #creation {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-columns: 15% 85%;
+        align-items: center;
+    }
+
+    #price-time #price {
+        font-size: .9rem;
+    }
+    
+    #price-time #time-left {
+        font-size: .9rem;
+    }
+}
+
+@media only screen and (max-width: 404px) {
+    #main-text h1{
+        font-size: 1.3rem;
+    }
+
+    #main-text p{
+        font-size: 1rem;
+    }
+
+    #price-time #price {
+        display: grid;
+        grid-template-columns: 19% 81%;
+        grid-template-rows: 1fr;
+        grid-column-gap: .1rem;
+        align-items: center;
+    }
+
+    #creation {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-columns: 18% 82%;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 386px) {
+    #main-text h1{
+        font-size: 1.27rem;
+    }
+
+    #main-text p{
+        font-size: .97rem;
+    }
+
+    #price-time #price {
+        display: grid;
+        grid-template-columns: 19% 81%;
+        grid-template-rows: 1fr;
+        grid-column-gap: .1rem;
+        align-items: center;
+    }
+
+    #price-time #price {
+        font-size: .85rem;
+    }
+    
+    #price-time #time-left {
+        font-size: .85rem;
+    }
+
+    #creation {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-columns: 20% 80%;
+        align-items: center;
+    }
+
+    #creation p {
+        font-size: .95rem;
+    }
+}
+
+@media only screen and (max-width: 374px) {
+    #main-text h1{
+        font-size: 1.2rem;
+    }
+
+    #main-text p{
+        font-size: .9rem;
+    }
+
+    #price-time #price {
+        display: grid;
+        grid-template-columns: 19% 81%;
+        grid-template-rows: 1fr;
+        grid-column-gap: .1rem;
+        align-items: center;
+    }
+
+    #price-time #price {
+        font-size: .8rem;
+    }
+    
+    #price-time #time-left {
+        font-size: .8rem;
+    }
+
+    #creation p {
+        font-size: .9rem;
+    }
+}
